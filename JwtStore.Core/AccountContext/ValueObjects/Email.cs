@@ -6,13 +6,17 @@ namespace JwtStore.Core.AccountContext.ValueObjects;
 
 public class Email : ValueObject
 {
+    protected Email()
+    {
+    }
+    
     public Email(string address)
     {
         Address = address;
         InvalidEmailException.ThrowIfInvalid(address);
     }
 
-    public string Address { get; }
+    public string Address { get; } = string.Empty;
     
     public string Hash => Address.ToBase64();
     
