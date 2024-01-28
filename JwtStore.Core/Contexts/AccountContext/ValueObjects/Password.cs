@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace JwtStore.Core.AccountContext.ValueObjects;
+namespace JwtStore.Core.Contexts.AccountContext.ValueObjects;
 
 public class Password
 {
@@ -22,7 +22,7 @@ public class Password
     public bool Challenge(string plainTextPassword)
         => Verify(Hash, plainTextPassword);
 
-    private string Hash { get; } = string.Empty;
+    public string Hash { get; } = string.Empty;
     public string ResetCode { get; } = Guid.NewGuid().ToString("N")[..8].ToUpper();
     
     private static string Generate(

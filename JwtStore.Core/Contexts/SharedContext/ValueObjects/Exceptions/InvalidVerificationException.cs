@@ -1,4 +1,4 @@
-﻿namespace JwtStore.Core.SharedContext.ValueObjects.Exceptions;
+﻿namespace JwtStore.Core.Contexts.SharedContext.ValueObjects.Exceptions;
 
 public class InvalidVerificationException : Exception
 {

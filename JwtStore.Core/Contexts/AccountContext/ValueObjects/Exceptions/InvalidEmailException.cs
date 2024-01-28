@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace JwtStore.Core.AccountContext.ValueObjects.Exceptions;
+namespace JwtStore.Core.Contexts.AccountContext.ValueObjects.Exceptions;
 
 public class InvalidEmailException : Exception
 {

@@ -1,8 +1,8 @@
-﻿using JwtStore.Core.AccountContext.ValueObjects.Exceptions;
-using JwtStore.Core.SharedContext.Extensions;
-using JwtStore.Core.SharedContext.ValueObjects;
+﻿using JwtStore.Core.Contexts.AccountContext.ValueObjects.Exceptions;
+using JwtStore.Core.Contexts.SharedContext.Extensions;
+using JwtStore.Core.Contexts.SharedContext.ValueObjects;
 
-namespace JwtStore.Core.AccountContext.ValueObjects;
+namespace JwtStore.Core.Contexts.AccountContext.ValueObjects;
 
 public class Email : ValueObject
 {

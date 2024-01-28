@@ -1,4 +1,4 @@
-﻿namespace JwtStore.Core.AccountContext.ValueObjects.Exceptions;
+﻿namespace JwtStore.Core.Contexts.AccountContext.ValueObjects.Exceptions;
 
 public class InvalidPasswordException : Exception
 {
