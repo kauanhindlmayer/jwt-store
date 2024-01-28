@@ -15,6 +15,13 @@ public class User : Entity
         Password = new Password(password);
     }
 
+    public User(string name, Email email, Password password)
+    {
+        Name = name;
+        Email = email;
+        Password = password;
+    }
+
     public string Name { get; private set; } = string.Empty;
     public Email Email { get; private set; } = null!;
     public Password Password { get; private set; } = null!;
@@ -24,7 +31,7 @@ public class User : Entity
     {
         if (!string.Equals(code.Trim(), Password.ResetCode.Trim(), StringComparison.InvariantCultureIgnoreCase))
             throw new Exception("This code is invalid!");
-        
+
         var password = new Password(plainTextPassword);
         Password = password;
     }

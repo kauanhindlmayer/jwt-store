@@ -8,7 +8,7 @@ public class Response: SharedContext.UseCases.Response
     {
     }
     
-    public Response(string message, int statusCode, IEnumerable<Notification>? notifications)
+    public Response(string message, int statusCode, IEnumerable<Notification>? notifications = null)
     {
         Message = message;
         StatusCode = statusCode;
