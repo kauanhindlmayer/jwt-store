@@ -27,7 +27,7 @@ public static class BuilderExtension
         builder.Services.AddDbContext<AppDbContext>(x =>
             x.UseSqlServer(Configuration.Database.ConnectionString, b => b.MigrationsAssembly("JwtStore.Api")));
     }
-    
+
     public static void AddJwtAuthentication(this WebApplicationBuilder builder)
     {
         builder.Services
@@ -41,11 +41,17 @@ public static class BuilderExtension
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Secrets.JwtPrivateKey)),
+                    IssuerSigningKey =
+                        new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Secrets.JwtPrivateKey)),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
             });
         builder.Services.AddAuthorization();
+    }
+
+    public static void AddMediator(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(Configuration).Assembly));
     }
 }
